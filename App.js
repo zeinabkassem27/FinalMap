@@ -7,7 +7,7 @@ import MapPage from './Pages/MapPage';
 import SignUp from './Pages/SignUp';
 import ExpertMap from './Pages/ExpertMap';
 import ExpertEdit from './Pages/ExpertEdit'
-
+import TestScreen from './Pages/TestScreen';
 
 
 const Stack = createStackNavigator();
@@ -30,6 +30,8 @@ function App({ navigation }) {
                 headerShown: false
             }}/>
          <Stack.Screen name="ExpertEdit" component={ExpertEdit} options={{ headerShown:false
+            }}/>
+         <Stack.Screen name="TestScreen" component={TestScreen} options={{ headerShown:false
             }}/>
       </Stack.Navigator>
     </NavigationContainer>

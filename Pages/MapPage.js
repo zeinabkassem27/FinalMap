@@ -7,6 +7,7 @@ import MAPz from '../Component/MAPComponent';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../style';
 import { IconButton } from "react-native-paper";
+import ImagePicker from 'react-native-image-picker';
 
 
 export default class Map extends Component {
@@ -38,7 +39,7 @@ export default class Map extends Component {
     const options={
       noData:true,
     }
-    ImagePicker.launchCamera(options,(response)=>{cd
+    ImagePicker.launchCamera(options,(response)=>{
       if(response.didCancel){
         console.log("image cancel");
       }
@@ -47,9 +48,11 @@ export default class Map extends Component {
       }
       else{
         // const body=new FormData();
-        console.log(response.uri)
+        // console.log(response.uri)
         this.setState({image:response.uri})
-        this.props.navigate.navigation('TestScreen')
+        this.props.navigation.navigate('TestScreen', {
+          image: response.uri
+        })
       }
     })
   }
